@@ -61,14 +61,15 @@ def run_camera():
         # Сетим изображение, начальные координаты, конечные координаты, цвет рамки и ширину рамки, для отображения рамки
         # rgb = get_random_rgb()
         cv2.rectangle(colorful_image, start_cords, end_cords, (255,0,0), 2)
-        cv2.putText(colorful_image, name, (start_cords[0], start_cords[1]-10), cv2.FONT_HERSHEY_COMPLEX, 1, (0,0,255), 2, cv2.LINE_AA)
+        
+        cv2.putText(colorful_image, name, (start_cords[0], start_cords[1]-10), cv2.FONT_HERSHEY_COMPLEX, 1, (255,0,0), 2, cv2.LINE_AA)
     # Преобразование массива буфера в файл изображения
     captured_image = Image.fromarray(colorful_image) 
     # Отображение преобразованного в файл изображения в лейбл tkinter
     photo_image = ImageTk.PhotoImage(image=captured_image) 
     label_widget.photo_image = photo_image 
     label_widget.configure(image=photo_image) 
-    # label_widget.after(100, run_camera) 
+    label_widget.after(100, run_camera) 
 
 # Создание кнопки и привязка действия запуска функции run_camera()
 button1 = Button(app, text="run camera", command=run_camera) 

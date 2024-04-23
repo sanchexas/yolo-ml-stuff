@@ -23,7 +23,7 @@ def get_random_rgb():
 def get_all_elements_from_yolo(unprepared_image):
     detected_elements_array = []
     # Уже заранее обученная модель
-    model = YOLO("./runs/detect/train7/weights/best.pt")
+    model = YOLO("./runs/detect/train/weights/best.pt")
     # Сетим изображение для определения координат и в принципе определения того, что изображено на картинке
     results = model.predict(unprepared_image)
 
@@ -64,7 +64,7 @@ def run_camera():
         # rgb = get_random_rgb()
         i += 1
         cv2.rectangle(colorful_image, start_cords, end_cords, (255,0,0), 2)
-        cv2.putText(colorful_image, f'{i} {name} {element['conf']}', (start_cords[0], start_cords[1]-10), cv2.FONT_HERSHEY_COMPLEX, 1, (0,0,255), 2, cv2.LINE_AA)
+        cv2.putText(colorful_image, f'{i} {name} {element["conf"]}', (start_cords[0], start_cords[1]-10), cv2.FONT_HERSHEY_COMPLEX, 1, (0,0,255), 2, cv2.LINE_AA)
     # Преобразование массива буфера в файл изображения
     captured_image = Image.fromarray(colorful_image) 
     # Отображение преобразованного в файл изображения в лейбл tkinter

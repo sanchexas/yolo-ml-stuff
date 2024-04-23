@@ -1,5 +1,5 @@
-train: C:\Users\Сергей\Desktop\ITEM_DETECTOR\demo-3\train\images
-val: C:\Users\Сергей\Desktop\ITEM_DETECTOR\demo-3\valid\images
+train: C:\Users\sanchexas\Desktop\important\yolo-ml-stuff\demo-3\train\images
+val: C:\Users\sanchexas\Desktop\important\yolo-ml-stuff\demo-3\valid\images
 # test: ../test/images
 
 nc: 1
@@ -8,6 +8,6 @@ names: ['egg']
 roboflow:
   workspace: eggs-odave
   project: eggs-proj
-  version: 1
+  version: 2
   license: CC BY 4.0
-  url: https://universe.roboflow.com/eggs-odave/eggs-proj/dataset/1
+  url: https://universe.roboflow.com/eggs-odave/eggs-proj/dataset/2
